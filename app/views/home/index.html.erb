@@ -1,6 +1,6 @@
 <div id="wrapper">
 
-        <!-- Sidebar -->
+        <!-- Sidebar 
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
@@ -20,9 +20,9 @@
                 
             </ul>
         </div>
-        <!-- /#sidebar-wrapper -->
+     /#sidebar-wrapper 
 
-        <!-- Page Content -->
+        <!-- Page Content
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div class="row">
@@ -98,7 +98,22 @@
             </div>
         </div>
          <br><br><br><br><br><br><br> <br><br><br><br><br><br><br>
-        <!-- /#page-content-wrapper -->
+     /#page-content-wrapper -->
 
     </div>
-    <!-- /#wrapper -->
+ <!--/#wrapper -->
+
+ <div class="center jumbotron">
+  <h1>Welcome to the Sample App</h1>
+
+  <h2>
+    This is the home page for the
+    <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+    sample application.
+  </h2>
+
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+</div>
+
+<%= link_to image_tag("rails.png", alt: "Rails logo"),
+            'http://rubyonrails.org/' %>

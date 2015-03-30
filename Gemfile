@@ -46,5 +46,6 @@ group :development, :test do
 #form
 gem 'bootstrap_form'	
 gem 'simple_form'
+gem 'bootstrap-sass',  '3.2.0.0'
 end
 

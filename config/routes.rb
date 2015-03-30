@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
+  get 'sessions/new'
+
   get 'home/index'
   get 'home/savedb'
+  get 'signup' => 'users#new'
+  get  'login' => 'sessions#new'
+  post  'login' => 'sessions#create'
+  delete  'logout' => 'sessions#destroy'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -58,4 +67,5 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   resources :students
+  resources :users
 end
