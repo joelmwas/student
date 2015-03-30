@@ -1,0 +1,72 @@
+<div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Register</a>
+                </li>
+                <li>
+                    <a href="#update">Update</a>
+                </li>
+                <li>
+                    <a href="#">Remove</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+
+
+<!--failure msg 
+<%if flash[:error] %>
+	<div class="alert alert-error">
+		<button type="button" class="close" data-dismiss="alert">x</button>
+			<strong><%= flash[:error] %></strong>
+	</div>
+<% end %>
+
+<!--Success Message 
+<%if flash[:success] %>
+	<div class="alert alert-success">
+	    <strong><% flash[:success] %></strong>
+		
+	</div>
+<% end %>
+-->
+
+<div class="flash-messages">
+<% flash.each do |name, msg| -%>
+	<%= content_tag :div, msg, class: name %>
+<% end -%>
+</div>
+<%= yield %>
+
+
+<div class="row">
+	<div class="col-md-6">
+			<!-- student reg form -->
+				<div class="form control-group">
+
+					<%= form_for @student  do |f| %>
+
+						 <%= f.label :name %> <br />
+						<%= f.text_field :name %> <br />
+						<%= f.label :idno %> <br />
+						<%= f.text_field :idno%> <br />
+						<%= f.label :email %> <br />
+						<%= f.text_field :email %> <br />
+						<%= f.submit class: "btn-primary" %>
+						
+					<% end %>
+				<div>
+	</div>
+
+
+</div><!--row  ->
