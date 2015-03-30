@@ -7,15 +7,18 @@ class StudentsController < ApplicationController
 
 	def new
 		@student = Student.new
-     end
-
-
-    
-    def student_params
-    	params.require(:student).permit(:name, :idno, :email)
     end
 
+     def show
+     	@student = Student.find(params[:id])
+     end
+    
+    def student_params
+    		params.require(:student).permit(:name, :idno, :email)
+    	end
 
+
+# create a student action and save in db
     def create
      	@student = Student.new(student_params)
      	if @student.save
@@ -26,10 +29,27 @@ class StudentsController < ApplicationController
      		render 'new'
 
    		 end
-    end
+     end
+# edit student info
+
+	def edit
+		@student = Student.find(params[:id])
+	end
+
+ #update student info action
 
     def update
+    	@student = Student.find(params[:id])
+    	if @student.update_attributes(student_params)
+    	  #handle a successful update
+    	else
+    		render 'new'
+        end
+end
+    private
 
-    end
+    	def student_params
+    		params.require(:student).permit(:name, :idno, :email)
+    	end
 
  end
