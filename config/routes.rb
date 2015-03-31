@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'users/new'
+  get 'students/new'
 
   get 'sessions/new'
 
@@ -16,7 +17,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'home#index'
+   root 'sessions#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

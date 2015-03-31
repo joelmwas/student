@@ -25,7 +25,7 @@ class StudentsController < ApplicationController
      		flash[:success] =" Student Saved Successfully"
      		render 'new'
      	else
-     		flash[:fail] ="Snap! Didn't save change some few things"
+     		flash[:fail] ="Snap! Didn't save. change some few things"
      		render 'new'
 
    		 end
